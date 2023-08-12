@@ -1,5 +1,5 @@
 - 目录
-- [第一章 强化学习概述](chapter1/chapter1)
+- [第一章 强化学习基础](chapter1/chapter1)
 - [第一章 习题](chapter1/chapter1_questions&keywords)
 - [第二章 马尔可夫决策过程 (MDP)](chapter2/chapter2)
 - [第二章 习题](chapter2/chapter2_questions&keywords)
@@ -17,7 +17,7 @@
 - [项目二 使用 DQN 实现 CartPole-v0](chapter7/project2)
 - [第八章 DQN (连续动作)](chapter8/chapter8)
 - [第八章 习题](chapter8/chapter8_questions&keywords)
-- [第九章 演员-评论家算法](chapter9/chapter9)
+- [第九章 演员-评论员算法](chapter9/chapter9)
 - [第九章 习题](chapter9/chapter9_questions&keywords)
 - [第十章 稀疏奖励](chapter10/chapter10)
 - [第十章 习题](chapter10/chapter10_questions&keywords)
@@ -27,7 +27,6 @@
 - [第十二章 习题](chapter12/chapter12_questions&keywords)
 - [项目三 使用 Policy-Based 方法实现 Pendulum-v0](chapter12/project3)
 - [第十三章 AlphaStar 论文解读](chapter13/chapter13)
-
 
 
 

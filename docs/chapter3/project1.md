@@ -1,10 +1,10 @@
 # 使用Q-learning解决悬崖寻路问题
 
-强化学习在运动规划方面也有很大的应用前景，具体包括路径规划与决策，群体派单等等，本次项目就将单体运动规划抽象并简化，让大家初步认识到强化学习在这方面的应用。在运动规划方面，其实已有很多适用于强化学习的仿真环境，小到迷宫，大到贴近真实的自动驾驶环境[CARLA](http://carla.org/)，对这块感兴趣的童鞋可以再多搜集一点。本项目采用gym开发的```CliffWalking-v0```环境，在上面实现一个简单的Q-learning入门demo。
+强化学习在运动规划方面也有很大的应用前景，具体包括路径规划与决策，智能派单等等，本次项目就将单体运动规划抽象并简化，让大家初步认识到强化学习在这方面的应用。在运动规划方面，其实已有很多适用于强化学习的仿真环境，小到迷宫，大到贴近真实的自动驾驶环境[CARLA](http://carla.org/)，对这块感兴趣的童鞋可以再多搜集一点。本项目采用gym开发的```CliffWalking-v0```环境，在上面实现一个简单的Q-learning入门demo。
 
 ## CliffWalking-v0环境简介
 
-首先对该环境做一个简介，该环境中文名称叫悬崖寻路问题（CliffWalking），是指在一个4 x 12的网格中，智能体以网格的左下角位置为起点，以网格的下角位置为终点，目标是移动智能体到达终点位置，智能体每次可以在上、下、左、右这4个方向中移动一步，每移动一步会得到-1单位的奖励。
+首先对该环境做一个简介，该环境中文名称叫悬崖寻路问题（CliffWalking），是指在一个4 x 12的网格中，智能体以网格的左下角位置为起点，以网格的右下角位置为终点，目标是移动智能体到达终点位置，智能体每次可以在上、下、左、右这4个方向中移动一步，每移动一步会得到-1单位的奖励。
 
 ![](assets/cliffwalking_1.png)
 
@@ -63,20 +63,6 @@ for i_ep in range(cfg.train_eps): # train_eps: 训练的最大episodes数
 ![rewards](assets/rewards.png)
 
 ![moving_average_rewards](assets/moving_average_rewards.png)
-
-## 主要代码清单
-
-**main.py** 或 **task_train.py**：保存强化学习基本接口，以及相应的超参数
-
-**agent.py**: 保存算法模型，主要包含choose_action(预测动作)和update两个函数，有时会多一个predict_action函数，此时choose_action使用了epsilon-greedy策略便于训练的探索，而测试时用predict_action单纯贪心地选择网络的值输出动作
-
-**model.py**：保存神经网络，比如全连接网络等等，对于一些算法，分为Actor和Critic两个类
-
-**memory.py**：保存replay buffer，根据算法的不同，replay buffer功能有所不同，因此会改写
-
-**plot.py**：保存相关绘制函数
-
-[参考代码](https://github.com/datawhalechina/easy-rl/tree/master/codes/QLearning)
 
 ## 备注
 
